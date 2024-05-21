@@ -1,9 +1,9 @@
-import ModalFeedback from "@/components/ModalFeedback";
+import ButtonOpenModal from "@/components/ButtonOpenModal";
 
 export default function Home() {
   return (
     <>
-      <ModalFeedback />
+      <ButtonOpenModal/>
     </>
   );
 }
