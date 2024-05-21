@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
 const ModalFeedback = () => {
+  const handleSubmit = () => {
+    alert("Thank you for your feedback!");
+  };
+
   return (
     <div className="fixed top-0 left-0 right-0 bottom-0 z-50 flex items-center justify-center">
       <div className="mx-5 py-5 bg-[#1A1832] rounded-md items-center">
@@ -28,7 +32,7 @@ const ModalFeedback = () => {
           <button className="border border-[#7A58F4] hover:bg-[#7A58F4] p-2 rounded-md hover:cursor-pointer">
             Cancel
           </button>
-          <button className="border border-[#7A58F4] hover:bg-[#7A58F4] p-2 rounded-md hover:cursor-pointer">
+          <button onClick={handleSubmit} className="border border-[#7A58F4] hover:bg-[#7A58F4] p-2 rounded-md hover:cursor-pointer">
             Submit
           </button>
         </div>
