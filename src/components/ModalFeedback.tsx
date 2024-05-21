@@ -1,6 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
+interface IProps {
+  openModal: boolean;
+  setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
-const ModalFeedback = () => {
+const ModalFeedback: React.FC<IProps> = ({ openModal, setOpenModal }) => {
   const handleSubmit = () => {
     alert("Thank you for your feedback!");
   };
@@ -9,7 +13,7 @@ const ModalFeedback = () => {
     <div className="fixed top-0 left-0 right-0 bottom-0 z-50 flex items-center justify-center">
       <div className="mx-5 py-5 bg-[#1A1832] rounded-md items-center">
         <div className="flex justify-end ">
-          <button className="mr-3 mb-2">x</button>
+          <button onClick={() => setOpenModal(false)} className="mr-3 mb-2">x</button>
         </div>
         <div className="text-center font-semibold text-white">
           <p className="sm:text-xl md:text-2xl p-2">
@@ -29,10 +33,13 @@ const ModalFeedback = () => {
         </div>
 
         <div className="flex justify-around mt-10">
-          <button className="border border-[#7A58F4] hover:bg-[#7A58F4] p-2 rounded-md hover:cursor-pointer">
+          <button onClick={() => setOpenModal(false)} className="border border-[#7A58F4] hover:bg-[#7A58F4] p-2 rounded-md hover:cursor-pointer">
             Cancel
           </button>
-          <button onClick={handleSubmit} className="border border-[#7A58F4] hover:bg-[#7A58F4] p-2 rounded-md hover:cursor-pointer">
+          <button
+            onClick={handleSubmit}
+            className="border border-[#7A58F4] hover:bg-[#7A58F4] p-2 rounded-md hover:cursor-pointer"
+          >
             Submit
           </button>
         </div>
