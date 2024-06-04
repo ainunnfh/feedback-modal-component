@@ -15,7 +15,7 @@ const ButtonOpenModal = () => {
       >
         Feedback
       </button>
-      {openModal && <ModalFeedback openModal={openModal} setOpenModal={setOpenModal}/>}
+      {openModal && <ModalFeedback setOpenModal={setOpenModal}/>}
     </div>
   );
 };
